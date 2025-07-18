@@ -12,11 +12,14 @@ const sentences = [
   "경찰은 대규모 사이버 범죄 조직을 검거했다고 밝혔다."
 ];
 
+
 const quoteEl = document.getElementById("quote");
 const inputEl = document.getElementById("input");
 const startBtn = document.getElementById("startBtn");
+const doneBtn = document.getElementById("doneBtn"); // ⬅️ 이거 추가
 const resultEl = document.getElementById("result");
 const timerEl = document.getElementById("timer");
+
 
 let selectedSentence = "";
 let timer = null;
@@ -33,6 +36,9 @@ startBtn.addEventListener("click", () => {
   inputEl.focus();
   resultEl.textContent = "";
   startBtn.disabled = true;
+
+  doneBtn.disabled = true;
+  doneBtn.style.opacity = 0.5;
 
   // 타이머 초기화
   timeLeft = 30;
@@ -73,3 +79,24 @@ function countCorrectChars(expected, actual) {
   }
   return count;
 }
+
+
+
+inputEl.addEventListener("input", () => {
+  if (inputEl.value === selectedSentence) {
+    doneBtn.disabled = false;
+    doneBtn.style.opacity = 1;
+  } else {
+    doneBtn.disabled = true;
+    doneBtn.style.opacity = 0.5;
+  }
+});
+
+
+doneBtn.addEventListener("click", () => {
+  clearInterval(timer);
+  inputEl.disabled = true;
+  evaluateResult();
+  startBtn.disabled = false;
+});
+
