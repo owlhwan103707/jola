@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #f0f0f0;
+  overflow: hidden;
+}
+
+.stickman {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.head {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: black;
+  margin: 0 auto;
+}
+
+.body {
+  width: 4px;
+  height: 40px;
+  background: black;
+  margin: 0 auto;
+}
+
+.arms {
+  width: 40px;
+  height: 4px;
+  background: black;
+  margin: 0 auto;
+  transform: translateY(-2px);
+}
+
+.legs {
+  width: 30px;
+  height: 4px;
+  background: black;
+  margin: 0 auto;
+  transform: rotate(45deg);
+}
