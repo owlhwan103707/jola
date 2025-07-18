@@ -3,16 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>졸라맨 따라오기</title>
-  <link rel="stylesheet" href="style.css?v=1.0.0" />
+  <title>뉴스 타자 연습</title>
+  <link rel="stylesheet" href="style.css?v=1" />
+  <link href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css" rel="stylesheet">
 </head>
 <body>
-  <div class="stickman" id="stickman">
-    <div class="head"></div>
-    <div class="body"></div>
-    <div class="arms"></div>
-    <div class="legs"></div>
+  <div class="container">
+    <h1>뉴스 문장 타자 연습</h1>
+    <p id="timer">30초 남음</p>
+    <div id="quote"></div>
+    <textarea id="input" placeholder="여기에 문장을 따라 적으세요..." disabled></textarea>
+    <button id="startBtn">연습 시작</button>
+    <div id="result"></div>
   </div>
-  <script src="script.js?v=1.0.0"></script>
+
+  <script src="script.js?v=1"></script>
 </body>
 </html>
